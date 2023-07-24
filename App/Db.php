@@ -25,6 +25,7 @@ class Db{
                  echo 'erreur ' .$err->getMessage();
             }
         }
+        return self::$db;
     }
 }
 // $test = new Db;
