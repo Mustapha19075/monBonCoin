@@ -12,9 +12,12 @@ class Db{
     static function getDb(){
         if(!self::$db){
             try {
-                $config = file_get_contents('../App/config.json');
+                // Chemin vers config.json depuis le dossier public
+                $config = file_get_contents('App/config.json');
+
                 //var_dump($config);
                 // pour pouvoir utiliser un fichier json il faut le decoder
+                // chemin vers config.json depuis le dossier racine
                 $config = json_decode($config);
                 // On crée l'objet PDO
                 self::$db = new PDO("mysql:host=" . $config->host . ";dbname=" . $config->dbName, $config->user, $config->password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
@@ -24,6 +27,6 @@ class Db{
         }
     }
 }
-$test = new Db;
-$test::getDb();
+// $test = new Db;
+// $test::getDb();
 
