@@ -21,16 +21,16 @@ class Routeur{
 
     public function app(){
         // On test le routeur
-        echo "Le routeur fonction";
+        // echo "Le routeur fonction";
         // On doit récuperer l'url
         $request = $_SERVER['REQUEST_URI'];
-           //echo $request;
+          // echo $request;
         // je ne veux pas recuperer les parametres dans mes routes
         // donc je casse la chaine de caractere en prenant "?" comme séparateur
         $request = explode("?", $request);
           //var_dump($request);
         $request = $request [0];
-
+        // echo $request;
         // On vérifi si la route ($request) est bien présente dans le tableau de routes
         if(array_key_exists($request, $this->routes)){
             $controller = "Controllers\\" . $this->routes[$request]['controller'];

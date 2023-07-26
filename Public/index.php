@@ -4,7 +4,7 @@
 
 use App\Routeur;
 
-echo "point d'entrée";
+// echo "point d'entrée";
 
 // Pour rester sur le fichier index.php quoi qu'il arrive je dois faire une réecriture d'url
 // une des possibilités est d'utiliser un fichier de config du serveur apache qui s'appelle .htaccess
@@ -15,5 +15,9 @@ echo "point d'entrée";
 require_once('../autoloader.php');
 
 // On crée un routeur pour gérer les routes
+// on appelle la méthode app()
+
+define('ROOT', dirname(__DIR__));
+// echo ROOT;
  $routeur = new Routeur;
  $routeur->app();
