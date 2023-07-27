@@ -50,6 +50,8 @@ class Users extends Controller{
     
     public static function inscription(){
         $errMsg = "";
+        
+
         self::render('users/inscription', [
             'title' => 'merci de remplir ce formulaire pour vous inscrire',
             'erreurMessage' => $errMsg
