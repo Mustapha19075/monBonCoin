@@ -4,6 +4,10 @@
 
 use App\Routeur;
 
+// Pour gerer les connexions on utilise la session
+session_start();
+// j'ai maintenant accés à $_session dans toute mon app
+
 // echo "point d'entrée";
 
 // Pour rester sur le fichier index.php quoi qu'il arrive je dois faire une réecriture d'url
