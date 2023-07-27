@@ -19,6 +19,15 @@ class Users extends Controller{
                 $pass = htmlspecialchars(trim($_POST['password']));
                 if(password_verify($pass, $user['password'])){
                     echo 'ok';
+                    // l'utilisateur est correct
+                    $_SESSION['message'] = "Salut content de vous revoir";
+                    $_SESSION['user'] = [
+                        'role' => $user['role'],
+                        'id'=> $user['idUser'],
+                        'firstname' => $user['firstname']
+                    ];
+                    // quand l'utilisateur est connecté on le redirige vers la route de notre choix
+                    header('Location: /');
                 }else{
                     $errMsg = "Le login et / ou le mot de passe est incorrect";
                 }
@@ -29,6 +38,21 @@ class Users extends Controller{
         self::render('users/connexion',[
             'title' => 'Vous pouvez vous connecter',
             'messageErreur' => $errMsg
+        ]);
+    }
+
+    public static function deconnexion(){
+        unset($_SESSION['user']);
+        $_SESSION['message'] = "A bientot";
+        header('Location: /');
+    }
+
+    
+    public static function inscription(){
+        $errMsg = "";
+        self::render('users/inscription', [
+            'title' => 'merci de remplir ce formulaire pour vous inscrire',
+            'erreurMessage' => $errMsg
         ]);
     }
 }

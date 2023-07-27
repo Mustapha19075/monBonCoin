@@ -15,7 +15,8 @@ class Routeur{
         '/ajoutProduct' => ['controller' => 'Products', 'action' => 'ajoutProduct'],
         '/modifProduct' => ['controller' => 'Products', 'action' => 'modifProduct'],
         '/suppProduct' => ['controller' => 'Products', 'action' => 'suppProduct'],
-        '/panier' => ['controller' => 'Panier', 'action' => 'gestionPanier']
+        '/panier' => ['controller' => 'Panier', 'action' => 'gestionPanier'],
+        '/profil' => ['controller' => 'Users', 'action' => 'profil'],
     ];
     // Je crée une méthode app qui est la méthode centrale de mon site le fichier index.php
 

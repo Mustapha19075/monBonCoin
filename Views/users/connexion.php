@@ -1,8 +1,9 @@
 <div class="container">
-    <?php if(isset($messageErreur)) : ?>
+    <?php if($messageErreur) : ?>
         <div class="alert alert-dismissible alert-danger">
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        <strong>"<?= $messageErreur ?>" Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+        <strong><?= $messageErreur ?></strong>
+         <!-- <a href="#" class="alert-link">Change a few things up</a> and try submitting again. -->
         <?php endif ?>
 </div>
     <form action="" method="post">
