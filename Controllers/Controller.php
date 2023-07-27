@@ -17,4 +17,12 @@ class Controller{
  
         require_once('../Views/layout.php');
     }
+    // méthode de sécurisation des champs de formilaire
+    public static function security(){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            foreach ($_POST as $key => $value){
+                $_POST[$key] = htmlspecialchars(trim($value));
+            }
+    }
+}
 }
